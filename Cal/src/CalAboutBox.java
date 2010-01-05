@@ -60,11 +60,15 @@ public class CalAboutBox extends javax.swing.JDialog {
         setTitle("About");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/41-4145.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
 
-        jLabel2.setFont(new java.awt.Font("Algerian", 0, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Algerian", 0, 36));
         jLabel2.setText("CAl-In-A-ShEET");
         jPanel1.add(jLabel2);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/41-4145.jpg"))); // NOI18N
         jPanel1.add(jLabel3);
 
         jLabel7.setText("A simple tool which generates a complete calender for a partcular year. Just select the year and ");
@@ -76,7 +80,7 @@ public class CalAboutBox extends javax.swing.JDialog {
 
         jLabel6.setText("1.0");
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("Author :");
 
         jLabel9.setText("Suhas Bharadwaj (srbharadwaj@gmail.com)");
@@ -116,7 +120,7 @@ public class CalAboutBox extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)

@@ -21,8 +21,6 @@ import javax.swing.RepaintManager;
  */
 
 
-
-
 /* A simple utility class that lets you very simply print
    an arbitrary component. Just pass the component to the
    CalPrintUtilities.printComponent. The component you want to
