@@ -1,7 +1,15 @@
 
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 
 /*
  * To change this template, choose Tools | Templates
@@ -20,7 +28,7 @@ import java.awt.Toolkit;
  *
  * @author suhas
  */
-public class CalAboutBox extends javax.swing.JDialog {
+public class CalAboutBox extends javax.swing.JDialog implements CalInterface {
 
     /** Creates new form CalAboutBox */
     public CalAboutBox(java.awt.Frame parent, boolean modal) {
@@ -55,6 +63,8 @@ public class CalAboutBox extends javax.swing.JDialog {
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("About");
@@ -64,26 +74,26 @@ public class CalAboutBox extends javax.swing.JDialog {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/41-4145.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
 
-        jLabel2.setFont(new java.awt.Font("Algerian", 0, 36));
-        jLabel2.setText("CAl-In-A-ShEET");
+        jLabel2.setFont(new java.awt.Font("Algerian", 0, 36)); // NOI18N
+        jLabel2.setText(APP_NAME);
         jPanel1.add(jLabel2);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/41-4145.jpg"))); // NOI18N
         jPanel1.add(jLabel3);
 
-        jLabel7.setText("A simple tool which generates a complete calender for a partcular year. Just select the year and ");
+        jLabel7.setText("A simple tool which generates a complete calender for a partcular year. Just select the");
 
-        jLabel8.setText("hit the print button, you will have a whole calender in a single sheet of paper");
+        jLabel8.setText("year and hit the print button, you will have a whole calender in a single sheet of paper");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Version : ");
 
-        jLabel6.setText("1.0");
+        jLabel6.setText(VERSION);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("Author :");
 
-        jLabel9.setText("Suhas Bharadwaj (srbharadwaj@gmail.com)");
+        jLabel9.setText(AUTHORandEMAILID);
 
         jButton1.setText("Close");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -93,26 +103,49 @@ public class CalAboutBox extends javax.swing.JDialog {
         });
         jPanel2.add(jButton1);
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setText("Home Page : ");
+
+        jLabel13.setText(HOMEPAGE);
+        jLabel13.setToolTipText("Open link");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel13MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel13MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -120,11 +153,11 @@ public class CalAboutBox extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -132,7 +165,11 @@ public class CalAboutBox extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jLabel9))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -143,12 +180,45 @@ public class CalAboutBox extends javax.swing.JDialog {
         this.setVisible(false);
 }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jLabel13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MousePressed
+        // TODO add your handling code here:
+        JLabel l = (JLabel) evt.getSource();
+        System.out.println("Pressed");
+        openURL(l.getText().trim());
+    }//GEN-LAST:event_jLabel13MousePressed
+
+    private void jLabel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseEntered
+       
+        JLabel l = (JLabel) evt.getSource();
+        customFontAndColor(l);
+    }//GEN-LAST:event_jLabel13MouseEntered
+
+    private void jLabel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseExited
+        JLabel l = (JLabel) evt.getSource();
+        defaultFontAndColor(l);
+    }//GEN-LAST:event_jLabel13MouseExited
+
+public void customFontAndColor(JLabel l)
+{
+    setCursor(Cursor.getPredefinedCursor(12));
+    l.setFont(new Font("Tahoma", Font.BOLD, 12));
+    l.setForeground(new Color(0, 0, 255));
+}
+
+public void defaultFontAndColor(JLabel l)
+{
+    setCursor(Cursor.getDefaultCursor());
+    l.setFont(new Font("Tahoma", Font.PLAIN, 11));
+    l.setForeground(new Color(0, 0, 0));
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
@@ -158,5 +228,38 @@ public class CalAboutBox extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+      static final String[] browsers = { "firefox", "opera", "konqueror", "epiphany",
+      "seamonkey", "galeon", "kazehakase", "mozilla", "netscape" };
+
+   public static void openURL(String url) {
+      String osName = System.getProperty("os.name");
+      try {
+         if (osName.startsWith("Mac OS")) {
+            Class<?> fileMgr = Class.forName("com.apple.eio.FileManager");
+            Method openURL = fileMgr.getDeclaredMethod("openURL",
+               new Class[] {String.class});
+            openURL.invoke(null, new Object[] {url});
+            }
+         else if (osName.startsWith("Windows"))
+            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
+         else { //assume Unix or Linux
+            boolean found = false;
+            for (String browser : browsers)
+               if (!found) {
+                  found = Runtime.getRuntime().exec(
+                     new String[] {"which", browser}).waitFor() == 0;
+                  if (found)
+                     Runtime.getRuntime().exec(new String[] {browser, url});
+                  }
+            if (!found)
+               throw new Exception(Arrays.toString(browsers));
+            }
+         }
+      catch (Exception e) {
+         JOptionPane.showMessageDialog(null,
+            "Error attempting to launch web browser\n" + e.toString());
+         }
+      }
 
 }
