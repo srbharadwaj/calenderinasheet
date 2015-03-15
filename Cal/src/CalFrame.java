@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Vector;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -312,9 +311,6 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        comboCalYear = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        buttonPrint = new javax.swing.JButton();
         printPanel = new javax.swing.JPanel();
         labelYear = new javax.swing.JLabel();
         yearPanel = new javax.swing.JPanel();
@@ -324,6 +320,10 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        comboCalYear = new javax.swing.JComboBox();
+        buttonPrint = new javax.swing.JButton();
         buttonAbout = new javax.swing.JButton();
         buttonExit = new javax.swing.JButton();
 
@@ -332,29 +332,9 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
         setIconImages(null);
         setResizable(false);
 
-        comboCalYear.setFont(new java.awt.Font("Tahoma", 1, 12));
-        comboCalYear.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                comboCalYearItemStateChanged(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jLabel2.setText("Select Year : ");
-
-        buttonPrint.setFont(new java.awt.Font("Tahoma", 1, 12));
-        buttonPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer.png"))); // NOI18N
-        buttonPrint.setMnemonic('P');
-        buttonPrint.setToolTipText("Print");
-        buttonPrint.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonPrintActionPerformed(evt);
-            }
-        });
-
         printPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
-        labelYear.setFont(new java.awt.Font("Tahoma", 1, 18));
+        labelYear.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labelYear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelYear.setText("Year: 2009");
 
@@ -364,7 +344,7 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
         yearPanel.setLayout(yearPanelLayout);
         yearPanelLayout.setHorizontalGroup(
             yearPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 317, Short.MAX_VALUE)
+            .addGap(0, 187, Short.MAX_VALUE)
         );
         yearPanelLayout.setVerticalGroup(
             yearPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -377,7 +357,7 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
         datePanel.setLayout(datePanelLayout);
         datePanelLayout.setHorizontalGroup(
             datePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 238, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         datePanelLayout.setVerticalGroup(
             datePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,14 +370,14 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
         weekPanel.setLayout(weekPanelLayout);
         weekPanelLayout.setHorizontalGroup(
             weekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 317, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         weekPanelLayout.setVerticalGroup(
             weekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 188, Short.MAX_VALUE)
         );
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel3.setText("Designed and developed by " + AUTHORandEMAILID);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -406,7 +386,7 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("and their intersection gives the week of that day");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Calender");
 
@@ -424,11 +404,13 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(printPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(datePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(labelYear, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(labelYear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(printPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         printPanelLayout.setVerticalGroup(
@@ -455,7 +437,27 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
                 .addComponent(jLabel3))
         );
 
-        buttonAbout.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Select Year : ");
+
+        comboCalYear.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        comboCalYear.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboCalYearItemStateChanged(evt);
+            }
+        });
+
+        buttonPrint.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        buttonPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer.png"))); // NOI18N
+        buttonPrint.setMnemonic('P');
+        buttonPrint.setToolTipText("Print");
+        buttonPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPrintActionPerformed(evt);
+            }
+        });
+
+        buttonAbout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         buttonAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lightbulb.png"))); // NOI18N
         buttonAbout.setMnemonic('A');
         buttonAbout.setToolTipText("About");
@@ -465,7 +467,7 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
             }
         });
 
-        buttonExit.setFont(new java.awt.Font("Tahoma", 1, 12));
+        buttonExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         buttonExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/quit.png"))); // NOI18N
         buttonExit.setMnemonic('Q');
         buttonExit.setToolTipText("Exit");
@@ -475,41 +477,56 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(comboCalYear, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonPrint)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonAbout)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonExit)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonExit)
+                    .addComponent(buttonAbout)
+                    .addComponent(buttonPrint)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(comboCalYear, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2)))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(printPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboCalYear, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(buttonPrint)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonAbout)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonExit)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(buttonPrint)
-                        .addComponent(buttonAbout)
-                        .addComponent(buttonExit))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(comboCalYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(printPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -563,6 +580,7 @@ public class CalFrame extends javax.swing.JFrame implements CalInterface {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelYear;
     private javax.swing.JPanel printPanel;
     private javax.swing.JPanel weekPanel;

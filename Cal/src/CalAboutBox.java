@@ -39,9 +39,8 @@ public class CalAboutBox extends javax.swing.JDialog implements CalInterface {
         Dimension frameSize = getSize();
         setLocation(new Point((screenSize.width - frameSize.width) / 2,
                 (screenSize.height - frameSize.height) / 2));
-
     }
-
+   
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -55,16 +54,17 @@ public class CalAboutBox extends javax.swing.JDialog implements CalInterface {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        labVersion = new javax.swing.JLabel();
+        labVersionValue = new javax.swing.JLabel();
+        labAuthor = new javax.swing.JLabel();
+        labAuthorValue = new javax.swing.JLabel();
+        labAuthorWebPage = new javax.swing.JLabel();
+        labAuthorWebPageValue = new javax.swing.JLabel();
+        labToolWebPage = new javax.swing.JLabel();
+        labToolWebPageValue = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("About");
@@ -81,71 +81,87 @@ public class CalAboutBox extends javax.swing.JDialog implements CalInterface {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/41-4145.jpg"))); // NOI18N
         jPanel1.add(jLabel3);
 
-        jLabel7.setText("A simple tool which generates a complete calender for a partcular year. Just select the");
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel3.setLayout(new java.awt.GridLayout(4, 4));
 
-        jLabel8.setText("year and hit the print button, you will have a whole calender in a single sheet of paper");
+        labVersion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labVersion.setText("Version : ");
+        jPanel3.add(labVersion);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setText("Version : ");
+        labVersionValue.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        labVersionValue.setText(VERSION);
+        jPanel3.add(labVersionValue);
 
-        jLabel6.setText(VERSION);
+        labAuthor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labAuthor.setText("Author :");
+        jPanel3.add(labAuthor);
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel11.setText("Author :");
+        labAuthorValue.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        labAuthorValue.setText(AUTHORandEMAILID);
+        jPanel3.add(labAuthorValue);
 
-        jLabel9.setText(AUTHORandEMAILID);
+        labAuthorWebPage.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labAuthorWebPage.setText("Author's WebPage : ");
+        jPanel3.add(labAuthorWebPage);
 
-        jButton1.setText("Close");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton1);
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel12.setText("Home Page : ");
-
-        jLabel13.setText(HOMEPAGE);
-        jLabel13.setToolTipText("Open link");
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel13MouseEntered(evt);
+        labAuthorWebPageValue.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        labAuthorWebPageValue.setText(AUTH_HOMEPAGE);
+        labAuthorWebPageValue.setToolTipText("Open link");
+        labAuthorWebPageValue.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                labAuthorWebPageValueMousePressed(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel13MouseExited(evt);
+                labAuthorWebPageValueMouseExited(evt);
             }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel13MousePressed(evt);
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labAuthorWebPageValueMouseEntered(evt);
             }
         });
+        jPanel3.add(labAuthorWebPageValue);
+
+        labToolWebPage.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labToolWebPage.setText("Home Page : ");
+        jPanel3.add(labToolWebPage);
+
+        labToolWebPageValue.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        labToolWebPageValue.setText(HOMEPAGE);
+        labToolWebPageValue.setToolTipText("Open link");
+        labToolWebPageValue.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labToolWebPageValueMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                labToolWebPageValueMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                labToolWebPageValueMousePressed(evt);
+            }
+        });
+        jPanel3.add(labToolWebPageValue);
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(238, 238, 238));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("A Calender generally has 12 sheets of paper isn't? \nWell how about an entire calender in just a single sheet of paper?\nHere is a simple tool for exactly that purpose\nJust select the year and hit the print button.");
+        jTextArea1.setAutoscrolls(false);
+        jTextArea1.setEnabled(false);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))
-                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -153,80 +169,82 @@ public class CalAboutBox extends javax.swing.JDialog implements CalInterface {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel9))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
-}//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jLabel13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MousePressed
-        // TODO add your handling code here:
+    private void labAuthorWebPageValueMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labAuthorWebPageValueMousePressed
         JLabel l = (JLabel) evt.getSource();
         System.out.println("Pressed");
+        System.out.println(l.getFont());
+        System.out.println(l.getColorModel());
         openURL(l.getText().trim());
-    }//GEN-LAST:event_jLabel13MousePressed
+    }//GEN-LAST:event_labAuthorWebPageValueMousePressed
 
-    private void jLabel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseEntered
-       
+    private void labAuthorWebPageValueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labAuthorWebPageValueMouseEntered
         JLabel l = (JLabel) evt.getSource();
         customFontAndColor(l);
-    }//GEN-LAST:event_jLabel13MouseEntered
+    }//GEN-LAST:event_labAuthorWebPageValueMouseEntered
 
-    private void jLabel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseExited
+    private void labAuthorWebPageValueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labAuthorWebPageValueMouseExited
         JLabel l = (JLabel) evt.getSource();
         defaultFontAndColor(l);
-    }//GEN-LAST:event_jLabel13MouseExited
+    }//GEN-LAST:event_labAuthorWebPageValueMouseExited
+
+    private void labToolWebPageValueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labToolWebPageValueMouseEntered
+        JLabel l = (JLabel) evt.getSource();
+        customFontAndColor(l);
+    }//GEN-LAST:event_labToolWebPageValueMouseEntered
+
+    private void labToolWebPageValueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labToolWebPageValueMouseExited
+        JLabel l = (JLabel) evt.getSource();
+        defaultFontAndColor(l);
+    }//GEN-LAST:event_labToolWebPageValueMouseExited
+
+    private void labToolWebPageValueMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labToolWebPageValueMousePressed
+        JLabel l = (JLabel) evt.getSource();
+        System.out.println("Pressed");
+        System.out.println(l.getFont());
+        System.out.println(l.getColorModel());
+        openURL(l.getText().trim());
+    }//GEN-LAST:event_labToolWebPageValueMousePressed
 
 public void customFontAndColor(JLabel l)
 {
     setCursor(Cursor.getPredefinedCursor(12));
-    l.setFont(new Font("Tahoma", Font.BOLD, 12));
+    l.setFont(new Font("Tahoma", Font.BOLD, 13));
     l.setForeground(new Color(0, 0, 255));
 }
 
 public void defaultFontAndColor(JLabel l)
 {
     setCursor(Cursor.getDefaultCursor());
-    l.setFont(new Font("Tahoma", Font.PLAIN, 11));
+    l.setFont(new Font("Tahoma", Font.PLAIN, 13));
     l.setForeground(new Color(0, 0, 0));
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel labAuthor;
+    private javax.swing.JLabel labAuthorValue;
+    private javax.swing.JLabel labAuthorWebPage;
+    private javax.swing.JLabel labAuthorWebPageValue;
+    private javax.swing.JLabel labToolWebPage;
+    private javax.swing.JLabel labToolWebPageValue;
+    private javax.swing.JLabel labVersion;
+    private javax.swing.JLabel labVersionValue;
     // End of variables declaration//GEN-END:variables
 
       static final String[] browsers = { "firefox", "opera", "konqueror", "epiphany",
